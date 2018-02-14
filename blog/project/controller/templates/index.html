@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link href="http://www.chenyifei.online/static/source/css/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/jquery-1.9.1.min.js"></script>
+
+<!-- <script type="text/javascript" src="http://www.chenyifei.online/static/script/common.js"></script>
+<link href="http://www.chenyifei.online/static/css/style.css" type="text/css" rel="stylesheet"></link> -->
+<link href="../../static/css/style.css" type="text/css" rel="stylesheet"></link>
+<script type="text/javascript" src="../../static/script/common.js"></script>
+</head>
+
+<body id="indexPage">
+	<!-- <div class="form-search">
+      
+      <div class="input-append" style="float:right;margin:10px 20px">
+        <input type="text" class="span2 search-query" placeholder="想看啥。。"/>
+        <span class="btn"><i class="icon-search"></i></span>
+      </div>
+
+    </div> -->
+	<div class="introduce" id="BGlayer">
+		<a href="/blog"><div class="headPic"></div></a>
+		<div class="content">
+			yif, 一个程序员
+			<div>
+				<p class="day" id="day"></p>
+				<p class="time" id="time"></p>
+			</div>
+		</div>
+	</div>
+	<EMBED src="http://www.chenyifei.online/static/music/bgm.mp3" width=0 height=0 volume=70 autostart=true loop=5 style="background:white;display:none"></EMBED>
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+
+	$(function(){
+		SetTimeThread("day", "time")
+		$(".headPic").mouseenter(function(){
+			$("#BGlayer").attr("class","introduceBright");
+		});
+
+		$(".headPic").mouseleave(function(){
+			$("#BGlayer").attr("class","introduce");
+		});
+
+		var height = document.documentElement.clientHeight;
+		$("#BGlayer").css("height", height + "px");
+	});
+	
+</script>
+

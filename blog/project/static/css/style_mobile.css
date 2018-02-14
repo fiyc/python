@@ -1,0 +1,278 @@
+/*==========================================================首页============================================================*/
+#indexPage{
+	background-image:url(http://www.chenyifei.online/image/bg.jpg);
+	background-size:cover
+}
+
+#indexPage .introduce{
+	background-color:rgba(0,0,0,0.7);
+	width:100%; 
+	height:100%;
+	/*margin-left: -200px; 
+	margin-top: -250px;*/
+	padding-top: 20%;
+}
+
+#indexPage .introduceBright{
+	background-color:rgba(0,0,0,0.4);
+	width:100%; 
+	height:100%;
+	/*margin-left: -200px; 
+	margin-top: -250px;*/
+	padding-top: 20%;
+}
+
+#indexPage .headPic{
+	width:500px;
+	height:500px;
+	border-radius:250px;
+	margin:auto;
+	background-image:url(http://www.chenyifei.online/image/tx.jpg);
+	background-size:cover;
+	filter:alpha(opacity=90);-moz-opacity:0.9;opacity: 0.9
+}
+
+#indexPage .content{
+	text-align: center;
+	color: white;
+	padding-top: 40px;
+	font-size: 40px;
+	font-family: "Adelle","Georgia","PingFang SC","Microsoft YaHei","SimSun","sans-serif";
+}
+
+#indexPage .content .day{
+	padding-top: 50px;
+	/*text-align: left;*/
+}
+
+#indexPage .content .time{
+	font-size: 180;
+	font-family: "Adelle";
+}
+
+
+/*==========================================================列表页============================================================*/
+
+#listPage{
+	/*background-color: #f5f5f5;*/
+	overflow:scroll;overflow-x:hidden
+}
+
+#listPage .headerPannel{
+	/*background-color: #f5f5f5;*/
+	background-color: white;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	min-height: 150px;
+	padding-top: 10px;
+	padding-left: 50px;
+}
+
+
+#listPage .rightPannel{
+	/*position: absolute;
+	left: 500px; 
+	top:150px;
+	height: 2000px;*/
+	margin-left: 0px;
+	margin-top: 200px;
+}
+
+#listPage .headerPannel .breadcrumb{
+	margin-bottom: 0px;
+	width:50%;
+	margin-right: 50px;
+	background-color: white;
+	font-size: 40px;
+}
+
+#listPage .headerPannel hr{
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+#listPage .headerPannel .category{
+	background-color: red;
+}
+
+#listPage .headerPannel .category ul{
+	list-style: none;
+	margin:0px;
+	padding: 0 10px;
+}
+
+#listPage .headerPannel .category li{
+	float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+#listPage .headerPannel .category .nocheck{
+	text-decoration:none;
+	color: #555555;
+
+	padding: 5px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+#listPage .headerPannel .category .nocheck:hover{
+	text-decoration:none;
+	color: white;
+	background-color: #428bca;
+	border-color: #428bca;
+}
+
+#listPage .headerPannel .category .hascheck{
+	text-decoration:none;
+	color: white;
+	padding: 5px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 1.5;
+    background-color: #428bca;
+    border-color: #428bca;
+}
+
+/*#listPage .rightPannel{
+	width: 60%;
+	margin-left: 500px;
+	margin-top: 150px;
+}*/
+
+#listPage .leftPannel .motto{
+	position: absolute;
+	left: 20px;
+	bottom: 40px;
+	margin-left:20px;
+	font-family: "Adelle","Georgia","PingFang SC","Microsoft YaHei","SimSun","sans-serif";
+	color: white;
+}
+
+#listPage .rightPannel .chapter{
+	margin-left: 50px;
+	padding-top:30px;
+	border-bottom: 1px dashed #d9d9d9;
+}
+
+
+#listPage .rightPannel .time{
+	font-size: 30px;
+	color: #717171;
+}
+
+#listPage .rightPannel .chapterName{
+	font-size: 45px;
+	font-weight: bold;
+	text-decoration:none;
+}
+
+#listPage .rightPannel .readNum{
+	font-size: 25px;
+	color: #717171;
+	padding-top: 10px;
+}
+
+#listPage #pageInfo{
+	font-family: "Adelle";
+	font-size: 30px;
+	color: #717171;
+	margin: 40px 0;
+}
+
+#listPage #pageInfo a{
+	text-decoration:none;
+}
+/*#detailPage{
+	background-image:url(http://www.chenyifei.online/image/detailBG.jpg);
+	background-size:cover;
+}*/
+
+/*#detailPage .BGlayer{
+	background-color:rgba(0,0,0,0.4);
+	width:100%; 
+	height:100%;
+}*/
+
+/*#detailPage .paper{
+	background-color:rgba(0,0,0,0.4);
+	box-shadow: 0px 1px 7px #BCBCBC;
+	border-radius: 4px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+
+
+/*#detailPage .paper .content{
+	color: white;
+	font-size: 18;
+	width: 100%;
+	height: 800px;
+	padding-left: 20px;
+	overflow:auto;
+}*/
+/*==========================================================详情页页============================================================*/
+#detailPage{
+	padding-left:50px;
+	/*font-family: apple-system, "Helvetica Neue", Arial, "PingFang SC", "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;*/
+}
+
+#detailPage .paper{
+	padding-top: 10px;
+	margin-left:auto;
+	margin-right: auto;
+}
+
+#detailPage .paper .breadcrumb{
+	background-color: white;
+	font-size: 40px;
+}
+
+#detailPage .paper .title{
+	padding-left: 15px;
+}
+
+#detailPage .paper .title .titleName{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.5;
+    font-family: inherit;
+    display: block;
+    color: #555555;
+}
+
+#detailPage .paper .title .smallInfo{
+    font-size: 25px;
+    line-height: 1.5;
+    font-family: inherit;
+    color: #999999;
+    margin-right: 10px;
+}
+
+#detailPage .paper .content{
+	margin-top: 40px;
+	padding-left: 15px;
+	font-family: inherit;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+#detailPage .paper .content pre{
+	display: block;
+    padding: 0px;
+    margin: 0px;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    word-break: inherit;
+    word-wrap: inherit;
+    background-color: inherit;
+    border: 0px;
+    border-radius: 4px;
+}

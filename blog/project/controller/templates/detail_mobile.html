@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<link href="http://www.chenyifei.online/static/source/css/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/showdown.min.js"></script>
+
+<script type="text/javascript" src="http://www.chenyifei.online/static/script/common.js"></script>
+<link href="http://www.chenyifei.online/static/css/style_mobile.css" type="text/css" rel="stylesheet"></link>
+<!-- <link href="../../static/css/style_mobile.css" type="text/css" rel="stylesheet"></link>
+<script type="text/javascript" src="../../static/script/common.js"></script> -->
+</head>
+<body id="detailPage">
+	<!-- <div class="BGlayer">
+		<div class="paper">
+			<div>
+				<ul class="breadcrumb">
+				  <li><a href="/">首页</a></li>
+				  <li><a href="/blog">Blog</a></li>
+				  <li class="active">{{data.Title}}</li>
+				</ul>
+			</div>
+			<div class="content"> 
+				{{data.Content}}	
+			</div>
+		</div>
+	</div> -->
+	<input type="hidden" value="{{data.Content}}" id="zw">
+	<input type="hidden" value="{{data.EditType}}" id="editType">
+
+	<div class="paper">
+		<div>
+			<ul class="breadcrumb">
+			  <li><a href="/">首页</a></li>
+			  <li><a href="/blog">Blog</a></li>
+			  <li class="active">{{data.TypeName}}</li>
+			</ul>
+		</div>
+
+		<div class="title">
+			<h1 class="titleName">{{data.Title}}</h1>
+			<span class="smallInfo">阅读{{data.ReadNum}}</span>
+			<span class="smallInfo">{{data.Time}}</span>
+		</div>
+
+		<div class="content">
+			<pre id="zwshow" style="white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;"></pre>
+		</div>
+
+	</div>
+
+	
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var content = $("#zw").val();
+		var editType = $("#editType").val();
+		if(editType == "1"){
+			var converter = new showdown.Converter();
+			content = converter.makeHtml(content); 
+		}
+		$("#zwshow").html(content);
+	});	
+</script>
+
+

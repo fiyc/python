@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+<link href="http://www.chenyifei.online/static/source/css/bootstrap.min.css" type="text/css" rel="stylesheet"></link>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.chenyifei.online/static/source/js/jquery-1.9.1.min.js"></script>
+
+<script type="text/javascript" src="http://www.chenyifei.online/static/script/common.js"></script>
+<link href="http://www.chenyifei.online/static/css/style.css" type="text/css" rel="stylesheet"></link>
+<!-- <link href="../../static/css/style.css" type="text/css" rel="stylesheet"></link>
+<script type="text/javascript" src="../../static/script/common.js"></script> -->
+</head>
+<body id="listPage">
+<input type="hidden" value="{{ data.TotalNum }}" id="totalNum">
+<input type="hidden" value="{{ data.PageNum }}" id="totalPageNum">
+<input type="hidden" value="1" id="currentPageIndex">
+<div>
+	<div class="leftPannel">
+			<div class="motto">
+				<h1 style="color:white">逸只夜猫</h1>
+				<h6 style="color:white">专注当前 不忘初心</h6>
+			</div>
+	</div>
+	<div class="headerPannel">
+		<div>
+			<div class="col-lg-3">
+				<ul class="breadcrumb">
+				  <li><a href="/">首页</a></li>
+				  <li class="active">Blog</li>
+				</ul>
+			</div>
+
+			<div class="col-lg-3 pull-right">
+			    <div class="input-group">
+			        <input type="text" class="form-control input-sm" id="keyword" value=""/>
+			        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+			    </div>
+		    </div>
+		</div>
+		
+		<div style="clear:both"></div>
+		
+
+		<hr>
+		<div class="category">
+			<ul>
+				{% for articleType in data.TypeList %}
+				<li><a href="#" class="nocheck" onclick="checkType(this)" typeid="{{articleType.TypeId}}">{{ articleType.TypeName }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+
+	</div>
+
+
+	<div class= "rightPannel">
+		<!-- {% for item in data.ArticleList %}
+			<div class="chapter">
+				<p class="time">{{ item.TimeDesc }}</p>
+				<a class="chapterName" href="/detail/{{item.ArticleId}}">{{ item.Title }}</a>
+				<p class="readNum">阅读{{item.ReadNum}}</p>
+			</div>
+		{% endfor %} -->
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	$(function(){
+		InitArticleList();
+	});
+
+	function InitArticleList(){
+		search(0, "", 1, false);
+
+		$("#keyword").on("input", function(){
+			var typeId = $('.category a[class="hascheck"]').eq(0).attr('typeid');
+			if(typeId == null || typeId == undefined)
+				typeId = 0;
+
+			var keyword = $("#keyword").val();
+			search(typeId, keyword, 1, false);
+			$("#currentPageIndex").val(1);
+		});
+	}
+
+	function GoNextPage(){
+		var totalPageNum = Number($("#totalPageNum").val());
+		var pageIndex = Number($("#currentPageIndex").val());
+		if(pageIndex >= totalPageNum)
+			return;
+		var typeId = $('.category a[class="hascheck"]').eq(0).attr('typeid');
+		if(typeId == null || typeId == undefined)
+			typeId = 0;
+		var keyword = $("#keyword").val();
+		result = search(typeId, keyword, pageIndex + 1, true);
+		if(result)
+			$("#currentPageIndex").val(pageIndex + 1);
+	}
+
+
+
+</script>
+</body>
+</html>
+
+
