@@ -4,7 +4,7 @@ def BeginConn():
 	try:
 		config = {
 			'user' : 'yif',
-			'password' : 'msn290850640',
+			'password' : '******',
 			'host' : '127.0.0.1',
 			'port' : '3306',
 			'database' : 'blog'
