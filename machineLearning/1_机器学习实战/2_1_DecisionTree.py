@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from math import log
+import operator
 
 
 '''
@@ -72,6 +73,54 @@ def chooseBestFeatureToSplit(dataSet):
 	return bestFeature
 
 
+'''
+取得类型标签中数量最多的一个标签
+'''
+def majorityCnt(classList):
+	classCount = {}
+	for vote in classList:
+		if vote not in classCount.keys():
+			classCount[vote] = 0
+
+		classCount[vote] += 1
+
+	sortedClassCount = sorted(classCount.iteritems(),
+		key = operator.itemgetter(1), reverse = True)
+
+	return sortedClassCount[0][0]
+
+
+'''
+根据数据集创造出决策树
+'''
+def createTree(dataSet, labels):
+	classList = [example[-1] for example in dataSet]
+
+	if classList.count(classList[0]) == len(classList): # 这个数据集的所有标签一致
+		return classList[0]
+
+	if len(dataSet[0]) == 1: # 这个数据集只有一个特征, 需要选择一个标签
+		return majorityCnt(classList)
+
+	bestFeat = chooseBestFeatureToSplit(dataSet) # 获取到最好的分类特征
+	bestFeatLabel = labels[bestFeat] 
+
+	myTree = { bestFeatLabel : {} }
+	del(labels[bestFeat])
+
+	featValues = [example[bestFeat] for example in dataSet]
+	uniqueVlas = set(featValues)
+
+	for value in uniqueVlas:
+		subLabels = labels[:]
+		myTree[bestFeatLabel][value] = createTree(
+			splitDataSet(dataSet, bestFeat, value), subLabels)
+
+	return myTree
+
+
+
+
 
 '''
 测试方法
@@ -94,7 +143,9 @@ def test():
 	# print a
 	# print b
 
-	print chooseBestFeatureToSplit(dataSet)
+	# print chooseBestFeatureToSplit(dataSet)
+	tree = createTree(dataSet, labels)
+	print tree
 
 if __name__ == '__main__':
 	test()

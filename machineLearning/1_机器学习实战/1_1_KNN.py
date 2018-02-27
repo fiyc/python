@@ -13,8 +13,6 @@ dataSet: 输入的训练样本集
 labels: 标签向量(元素数目和dataSet的行数相同)
 k: 选择最近邻居的数目
 '''
-
-
 def classify(inX, dataSet, labels, k):
 
     dataSetSize = dataSet.shape[0]
