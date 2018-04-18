@@ -19,8 +19,8 @@ baseUrl = 'http://www.chuixue.net'
 comic_args = sys.argv
 if (len(comic_args) == 1):
     # os._exit(0)
-    id = "7660"
-    desc = "绿野仙踪"
+    id = "26798"
+    desc = "一人之下"
 else:
     id = comic_args[1]
     desc = str(comic_args[2])
@@ -78,8 +78,8 @@ for item in links:
     end = matchRes.regs[0][1]
     title = title[begin:end]
 
-    # if(int(title) < 218):
-    # 	break
+    if(int(title) < 334):
+    	break
 
     # print("开始获取地址: " + detailurl + " 的页面信息...")
     print('begin to get the ' + title + 'detail info from url: ' + detailurl)
@@ -132,7 +132,7 @@ outputData["data"] = finaloutput
 outputJson = json.dumps(outputData)
 # print(outputJson)
 outputPath = '/Users/yif/Documents/code/front-end/comic-book/data-source/' + str(
-    id) + '.json'
+    id) + '_2.json'
 SaveFile(outputPath, outputJson, 'w')
 
 # headers = {'Accept':'image/webp,*/*;q=0.8', 'Accept-Encoding':'gzip,deflate,sdch', 'Accept-Language':'zh-CN,zh;q=0.8','Connection':'keep-alive','User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36'}
