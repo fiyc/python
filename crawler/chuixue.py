@@ -78,7 +78,7 @@ for item in links:
     end = matchRes.regs[0][1]
     title = title[begin:end]
 
-    if(int(title) < 334):
+    if(int(title) < 335):
     	break
 
     # print("开始获取地址: " + detailurl + " 的页面信息...")
