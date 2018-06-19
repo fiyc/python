@@ -1,7 +1,7 @@
 
-import sys
-print(sys.path)
-# import fiyc_http
+# import sys
+# import http_help
+
 
 # import os
 # import platform
