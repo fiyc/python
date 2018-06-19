@@ -5,7 +5,8 @@ import os
 import re
 sys.path.append(os.getcwd())
 
-from library import http_help
+from fiyclib import lib
+http_help = lib.http_help
 
 def hander(html):
     if(html == '' or html == None):
@@ -14,10 +15,7 @@ def hander(html):
     result = {}
     titles = re.findall('<a href="(.*?)" title="(.*?)" strategy="BlogCommendFromBaidu',html)
 
-    fs = open('temp.html', 'a+')
-    fs.write(html)
-    fs.close()
-    return html
+    return titles
 
 
 param = {

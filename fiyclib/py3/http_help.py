@@ -1,6 +1,5 @@
 #-*- coding: UTF-8 -*-
 
-# from urllib import request
 import sys
 import urllib.request
 import random
@@ -49,7 +48,7 @@ def request(param, header):
 
     encode = default_req['encode']
     if(encode == None or encode == ''):
-        encode = 'utf8'
+        encode = 'utf-8'
 
     timeout = default_req['timeout']
     maxRequest = default_req['retry']

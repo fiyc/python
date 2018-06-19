@@ -1,3 +1,14 @@
+import platform
+import sys
+import os
+
+print(os.path.abspath(__file__))
+
+
+if(platform.python_version()[0] == '2'):
+    from . import py2 as lib
+else:
+    from . import py3 as lib
 
 # import sys
 # import http_help
